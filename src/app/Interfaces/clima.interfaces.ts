@@ -59,6 +59,7 @@
             TemperaturaActual: number,
             TemperaturaMaxima: number,
             TemperaturaMinima: number,
+            Imagen:string,
           }
     
 

@@ -1,24 +1,26 @@
-<div class="contenedor">
-    <h5>MEXICO CITY</h5>
-    <img src="./../../../assets/IMG/cloudy.PNG" alt="">
+<div class="tarjeta">
+    <p class="titulo">{{climaFiltradoRecibido.NombreCiudad}}</p>
+    <img
+    [src]="climaFiltradoRecibido.Imagen | construirUrlImagen"/>
+    <!-- http://openweathermap.org/img/wn/10d@2x.png -->
     <div class="climaActual"> 
-        <p>16</p>
-        <p>CLOUDS</p>
+        <p>{{climaFiltradoRecibido.TemperaturaActual | kelvinCelsius}}</p>
+        <p>{{climaFiltradoRecibido.ClimaActual}}</p>
     </div>
 
     <div class="temperaturasEsperadas">
 
         <div class="temperaturaMinima">
-            <p>19</p>
+            <p>{{climaFiltradoRecibido.TemperaturaMinima |kelvinCelsius}}</p>
             <p class="textoTemperatura1">Min</p>
         </div>
 
         <div class="temperaturaMaxima">
-            <p>23</p>
+            <p>{{climaFiltradoRecibido.TemperaturaMaxima | kelvinCelsius}}</p>
             <p class="textoTemperatura2">Max</p>
         </div>
     </div>
-    <button>
+    <button (click)="AgregarCiudad()">
         ADD CITY
     </button>
 </div>

@@ -1,6 +1,6 @@
 .contenedor{
     width: 100%;
-    height: 200vh;
+    height: 180vh;
     background: linear-gradient(0deg,
     rgba(97,166,251,1) 0%,
     rgba(95,220,228,1) 100%
@@ -10,6 +10,21 @@
     align-items:center;
 }
 
+.contenedor .back-arrow{
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    left: 5%;
+    top: 5%;
+    background: #42b6e7;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.contenedor .back-arrow img{
+width: 100%;
+
+}
 .contenedorBuscador{
     width: 70%;
     height: 130vh;
@@ -18,6 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 h2{
@@ -28,6 +44,7 @@ h2{
 .inputBuscador{
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 50px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -44,6 +61,12 @@ h2{
      rgba(177,171,177,0.3)
 }
 
+.contenedorBuscador .texto{
+    position: absolute;
+    top:80%;
+    font-size: 40px;
+}
+    
 .inputBuscador > span {
     display: block;
     float: left;
@@ -54,5 +77,11 @@ h2{
     z-index: 3;
     transform: translate(-50%, -5px);
     background: #31feae;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.inputBuscador > span > img{
+    width: 50%
+}
