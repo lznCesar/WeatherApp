@@ -11,6 +11,7 @@ import { CambiarImagenClimaDirective } from './directives/cambiar-imagen-clima.d
 import { ConstruirUrlImagenPipe } from './pipes/construir-url-imagen.pipe';
 import { HomeComponent } from './componentes/home/home.component';
 import { appRouting } from "./app.routes";
+import { DetallesComponent } from './componentes/detalles/detalles.component';
 
 
 
@@ -23,6 +24,7 @@ import { appRouting } from "./app.routes";
     CambiarImagenClimaDirective,
     ConstruirUrlImagenPipe,
     HomeComponent,
+    DetallesComponent,
   
   ],
   imports: [

@@ -1,10 +1,10 @@
 <div class="contenedor">
     <ng-container *ngIf="!loading">
         <app-cards-weather
-        [style.height.%] = "60"
-       
         [climaFiltradoRecibido]= "clima" 
-        *ngFor="let clima of ArrayClimaFiltrado">
+        *ngFor="let clima of ArrayClimaFiltrado"
+        mostrarBotono= "false"
+        >
         </app-cards-weather
         > 
     </ng-container>

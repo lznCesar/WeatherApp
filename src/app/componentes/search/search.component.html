@@ -13,7 +13,10 @@
         <p *ngIf="!MostrarTarjeta" class="texto">
             Selecciona una Ciudad</p>
         <app-cards-weather 
-        *ngIf="MostrarTarjeta" [climaFiltradoRecibido]="ClimaFiltrado">
+        *ngIf="MostrarTarjeta" 
+        [climaFiltradoRecibido]="ClimaFiltrado"
+        mostrarBoton = "true"
+        >
         </app-cards-weather>
     </div>
 </div>

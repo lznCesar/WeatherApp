@@ -5,6 +5,7 @@ import { pluck, debounceTime, switchMap, map, tap } from "rxjs/operators";
 import { Clima, ClimaFiltrado } from "./../../Interfaces/clima.interfaces";
 import  Swal from "sweetalert2"
 import { Router } from '@angular/router';
+import { WeatherService } from 'src/app/service/weather.service';
 
 @Component({
   selector: 'app-search',
@@ -14,13 +15,10 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
   @ViewChild('inputCiudad')InputCiudad:ElementRef
 
-  private url = `https://api.openweathermap.org/data/2.5/weather?q=`;
-  private apikey = `&appid=9b6508eb11338168e6b765c36b70023b`;
   public ClimaFiltrado:ClimaFiltrado;
   public MostrarTarjeta:boolean=false;
 
-  constructor( private http:HttpClient,
-                 private router:Router) { }
+  constructor(private router:Router,private AWService:WeatherService) { }
 
   ngOnInit(): void {  }
 
@@ -40,8 +38,8 @@ export class SearchComponent implements OnInit {
       tap(()=> this.MostrarTarjeta=false),
       debounceTime(1500),
       pluck('target', 'value'),
-      switchMap(nombreCiudad => this.http.get(
-        `${this.url}${nombreCiudad}${this.apikey}`).pipe(
+      switchMap((nombreCiudad:string) =>
+      this.AWService.ObtenerClima(nombreCiudad).pipe(
           map((clima:Clima)=>{
             return{
               NombreCiudad: clima.name,
